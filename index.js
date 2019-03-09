@@ -15,7 +15,12 @@ app.get('/users', function(req, res) {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     })
-    .then(({ data }) => res.json(data))
+    .then(({ data }) => {
+      if (data.ok) {
+        return res.json(data);
+      }
+      return Promise.reject(data);
+    })
     .catch(error => res.status(500).json(error));
 });
 
