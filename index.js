@@ -14,6 +14,7 @@ app.get('/users', function(req, res) {
         Authorization: `Bearer ${process.env.SLACK_API_TOKEN}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
+      params: req.query,
     })
     .then(({ data }) => {
       if (data.ok) {
