@@ -1,0 +1,13 @@
+{
+  "name": "devmt-members-api",
+  "env": {
+    "SLACK_API_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  }
+}
